@@ -40,12 +40,13 @@ environment = SubResource("Environment_pd3rl")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1629802077]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 5.8731527, 8.917818)
 
-[node name="Venus" type="RigidBody3D" parent="." unique_id=1894795131]
+[node name="Venus" type="RigidBody3D" parent="." unique_id=1894795131 node_paths=PackedStringArray("centre_rotation")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 gravity_scale = 0.0
 script = ExtResource("1_d27vx")
 periode = 8.58
 rayon = 4.0
+centre_rotation = NodePath("../Soleil")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Venus" unique_id=1496583295]
 mesh = SubResource("SphereMesh_pd3rl")
@@ -54,12 +55,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ftkmj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Venus" unique_id=2131966920]
 shape = SubResource("SphereShape3D_pd3rl")
 
-[node name="Terre" type="RigidBody3D" parent="." unique_id=904983492]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+[node name="Terre" type="RigidBody3D" parent="." unique_id=904983492 node_paths=PackedStringArray("centre_rotation")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.373187, 0, 0)
 gravity_scale = 0.0
 script = ExtResource("1_d27vx")
 periode = 13.0
 rayon = 6.0
+centre_rotation = NodePath("../Soleil")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Terre" unique_id=1624782640]
 mesh = SubResource("SphereMesh_pd3rl")
@@ -68,13 +70,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d27vx")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Terre" unique_id=600494309]
 shape = SubResource("SphereShape3D_pd3rl")
 
-[node name="Lune" type="RigidBody3D" parent="." unique_id=309872118 node_paths=PackedStringArray("centreRotation")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+[node name="Lune" type="RigidBody3D" parent="." unique_id=309872118 node_paths=PackedStringArray("centre_rotation")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4570956, 0, 0)
 gravity_scale = 0.0
 script = ExtResource("1_d27vx")
 periode = 1.0
 rayon = 1.5
-centreRotation = NodePath("../Terre")
+centre_rotation = NodePath("../Terre")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Lune" unique_id=1768097223]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

@@ -3,7 +3,7 @@ extends RigidBody3D
 var temps : float
 @export var periode : float
 @export var rayon : float
-@export var centreRotation : RigidBody3D
+@export var centre_rotation : RigidBody3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,8 +17,8 @@ func _process(delta: float) -> void:
 		rayon * sin(2 * PI / periode * temps)
 	)
 	
-	if centreRotation != null:
-		position += centreRotation.position
+	if centre_rotation != null:
+		position += centre_rotation.position
 	
 	temps += delta
 	
